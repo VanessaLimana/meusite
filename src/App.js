@@ -7,18 +7,25 @@ constructor(props){
     this.state = {
         hora: '00:00:00'
         };
-    }
-
-    componentDidMount(){
+    } 
+    componentDidMount(){ //web service, api... 
         setInterval(() => {
             this.setState({ hora: new Date().toLocaleTimeString() })
         }, 1000);
+   
     }
-    
+    componentDidUpdate(){
+        console.log('atualizando?');
+    }
+    /*
+    shouldComponentUpdate(){ //vai retornar um true ou false 
+    } */
+
  render(){
      return(
         <div>
             <h2>Meu tempo {this.props.hora} </h2>
+            
         </div>
         );
         }
