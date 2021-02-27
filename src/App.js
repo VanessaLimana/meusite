@@ -1,33 +1,13 @@
-import React, {Component, component} from 'react';
-
+import react, {Component, component} from 'react';
+import Membro from './components/Membro/Membro'
 class App extends Component{
-
-constructor(props){
-    super(props);
-    this.state = {
-        hora: '00:00:00'
-        };
-    } 
-    componentDidMount(){ //web service, api... 
-        setInterval(() => {
-            this.setState({ hora: new Date().toLocaleTimeString() })
-        }, 1000);
-   
-    }
-    componentDidUpdate(){
-        console.log('atualizando?');
-    }
-    /*
-    shouldComponentUpdate(){ //vai retornar um true ou false 
-    } */
-
- render(){
-     return(
+    render(){
+    return(
         <div>
-            <h2>Meu tempo {this.props.hora} </h2>
-            
+            <Membro/>
         </div>
         );
-        }
+
     }
+}
 export default App;
